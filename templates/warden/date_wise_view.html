@@ -1,0 +1,186 @@
+
+{% extends 'warden/warden_base.html' %}
+{% load static %}
+{% block content %}
+
+  <!--/ Intro Single star /-->
+  <section class="intro-single">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-8">
+          <div class="title-single-box">
+            <h1 class="title-single">DATE WISE VIEW...</h1>
+{#            <span class="color-text-a">Aut voluptas consequatur unde sed omnis ex placeat quis eos. Aut natus officia corrupti qui autem fugit consectetur quo. Et ipsum eveniet laboriosam voluptas beatae possimus qui ducimus. Et voluptatem deleniti. Voluptatum voluptatibus amet. Et esse sed omnis inventore hic culpa.</span>#}
+          </div>
+        </div>
+{#        <div class="col-md-12 col-lg-4">#}
+{#          <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">#}
+{#            <ol class="breadcrumb">#}
+{#              <li class="breadcrumb-item">#}
+{#                <a href="index.html">Home</a>#}
+{#              </li>#}
+{#              <li class="breadcrumb-item active" aria-current="page">#}
+{#                Contact#}
+{#              </li>#}
+{#            </ol>#}
+{#          </nav>#}
+{#        </div>#}
+      </div>
+    </div>
+  </section>
+  <!--/ Intro Single End /-->
+
+  <!--/ Contact Star /-->
+  <section class="contact">
+    <div >
+      <div class="row">
+        <div >
+          <div class="contact-map box">
+ <form action="" method="post" style="width: 400px;padding-left: 100px;">
+                      {% csrf_token %}
+                   <label for="lname">From-Date</label>
+    <input type="date" id="lname" name="from_date" style="width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;" placeholder="Prisoner join date.." required>
+   <label for="lname">To-Date</label>
+    <input type="date" id="lname" name="to_date" style="width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;" placeholder="Prisoner release date.." required>
+                       <input type="hidden" id="lname" name="prison_id" value="{{ dri.id }}" style="width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;" placeholder="Prisoner release date.." required>
+                      <button type="submit" class=" btn btn-success">Search</button>
+                      </form>
+          </div>
+        </div>
+
+        <div class="col-sm-12 section-t8">
+          <div class="row">
+            <div class="col-md-7">
+
+              <div style="padding-left: 100px;">
+
+   <table class="table table-bordered table-striped table-hover">
+
+<th class="info" style="background-color: lightgreen;">Number</th>
+<th class="info" style="background-color: lightgreen;">Name</th>
+<th class="info" style="background-color: lightgreen;">View Details</th>
+   <th class="info" style="background-color: lightgreen;">Update</th>
+<th class="info" style="background-color: lightgreen;">Remove</th>
+
+{% for dri in view_prisoner  %}
+
+<tr>
+    <td>{{ dri.number}}</td>
+    <td>{{ dri.name}}</td>
+
+
+
+    <td><a href="view_details?id={{ dri.id}}" class=" btn btn-success">Details</a></td>
+     <td><a href="update_view_details?id={{ dri.id}}" class=" btn btn-success">Update</a></td>
+    <td><a href="reject?id={{ dri.user_id}}" class=" btn btn-danger">Remove</a></td>
+
+</tr>
+
+    {% endfor %}
+</table>
+</div>
+            </div>
+{#            <div class="col-md-5 section-md-t3">#}
+{#              <div class="icon-box section-b2">#}
+{#                <div class="icon-box-icon">#}
+{#                  <span class="ion-ios-paper-plane"></span>#}
+{#                </div>#}
+{#                <div class="icon-box-content table-cell">#}
+{#                  <div class="icon-box-title">#}
+{#                    <h4 class="icon-title">Say Hello</h4>#}
+{#                  </div>#}
+{#                  <div class="icon-box-content">#}
+{#                    <p class="mb-1">Email.#}
+{#                      <span class="color-a">contact@example.com</span>#}
+{#                    </p>#}
+{#                    <p class="mb-1">Phone.#}
+{#                      <span class="color-a">+54 356 945234</span>#}
+{#                    </p>#}
+{#                  </div>#}
+{#                </div>#}
+{#              </div>#}
+{#              <div class="icon-box section-b2">#}
+{#                <div class="icon-box-icon">#}
+{#                  <span class="ion-ios-pin"></span>#}
+{#                </div>#}
+{#                <div class="icon-box-content table-cell">#}
+{#                  <div class="icon-box-title">#}
+{#                    <h4 class="icon-title">Find us in</h4>#}
+{#                  </div>#}
+{#                  <div class="icon-box-content">#}
+{#                    <p class="mb-1">#}
+{#                      Manhattan, Nueva York 10036,#}
+{#                      <br> EE. UU.#}
+{#                    </p>#}
+{#                  </div>#}
+{#                </div>#}
+{#              </div>#}
+{#              <div class="icon-box">#}
+{#                <div class="icon-box-icon">#}
+{#                  <span class="ion-ios-redo"></span>#}
+{#                </div>#}
+{#                <div class="icon-box-content table-cell">#}
+{#                  <div class="icon-box-title">#}
+{#                    <h4 class="icon-title">Social networks</h4>#}
+{#                  </div>#}
+{#                  <div class="icon-box-content">#}
+{#                    <div class="socials-footer">#}
+{#                      <ul class="list-inline">#}
+{#                        <li class="list-inline-item">#}
+{#                          <a href="#" class="link-one">#}
+{#                            <i class="fa fa-facebook" aria-hidden="true"></i>#}
+{#                          </a>#}
+{#                        </li>#}
+{#                        <li class="list-inline-item">#}
+{#                          <a href="#" class="link-one">#}
+{#                            <i class="fa fa-twitter" aria-hidden="true"></i>#}
+{#                          </a>#}
+{#                        </li>#}
+{#                        <li class="list-inline-item">#}
+{#                          <a href="#" class="link-one">#}
+{#                            <i class="fa fa-instagram" aria-hidden="true"></i>#}
+{#                          </a>#}
+{#                        </li>#}
+{#                        <li class="list-inline-item">#}
+{#                          <a href="#" class="link-one">#}
+{#                            <i class="fa fa-pinterest-p" aria-hidden="true"></i>#}
+{#                          </a>#}
+{#                        </li>#}
+{#                        <li class="list-inline-item">#}
+{#                          <a href="#" class="link-one">#}
+{#                            <i class="fa fa-dribbble" aria-hidden="true"></i>#}
+{#                          </a>#}
+{#                        </li>#}
+{#                      </ul>#}
+{#                    </div>#}
+{#                  </div>#}
+{#                </div>#}
+{#              </div>#}
+{#            </div>#}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+  <!--/ Contact End /-->
+
+  <!--/ footer Star /-->
