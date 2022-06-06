@@ -9,11 +9,11 @@ from django.views.generic.base import View
 class IndexView(TemplateView):
     template_name = 'admin/admin_index.html'
 
-class Warden_Approvel(TemplateView):
-    template_name = 'admin/warden_approvel.html'
+class Jailer_Approvel(TemplateView):
+    template_name = 'admin/jailer_approvel.html'
 
     def get_context_data(self, **kwargs):
-        context = super(Warden_Approvel,self).get_context_data(**kwargs)
+        context = super(Jailer_Approvel,self).get_context_data(**kwargs)
 
         warden = warden_reg.objects.filter(user__last_name='0',user__is_staff='0',user__is_active='1')
 
@@ -38,10 +38,10 @@ class RejectView(View):
         user.save()
         return render(request,'admin/admin_index.html',{'message':"Account Removed"})
 
-class Warden_View(TemplateView):
-    template_name = 'admin/warden_view.html'
+class Jailer_View(TemplateView):
+    template_name = 'admin/jailer_view.html'
     def get_context_data(self, **kwargs):
-        context = super(Warden_View,self).get_context_data(**kwargs)
+        context = super(Jailer_View,self).get_context_data(**kwargs)
 
         app_warden = warden_reg.objects.filter(user__last_name='1',user__is_staff='0',user__is_active='1')
 

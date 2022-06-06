@@ -29,6 +29,7 @@
 
                     <!-- Contact Form -->
                     <form id="contactForm" method="post" action=""  enctype="multipart/form-data" name="regForm">
+                        {% csrf_token %}
                         <div class="form-group">
                             <input type="text" class="form-control-input" id="fname" name="name" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)"  required >
                             <label class="label-control" for="fname">Name</label>

@@ -1,156 +1,84 @@
 
-{% extends 'health_officer/h_officer_base.html' %}
-{% load static %}
+ {% extends 'health_officer/h_officer_base.html' %}
+
 {% block content %}
-        {% if message %}
-<script>
-alert("{{ message }}")
-</script>
-{% endif %}
 
-  <!--/ Intro Single star /-->
-  <section class="intro-single">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 col-lg-8">
-          <div class="title-single-box">
-            <h1 class="title-single">ADD HEALTH DETAILS</h1>
-{#            <span class="color-text-a">Aut voluptas consequatur unde sed omnis ex placeat quis eos. Aut natus officia corrupti qui autem fugit consectetur quo. Et ipsum eveniet laboriosam voluptas beatae possimus qui ducimus. Et voluptatem deleniti. Voluptatum voluptatibus amet. Et esse sed omnis inventore hic culpa.</span>#}
-          </div>
-        </div>
-{#        <div class="col-md-12 col-lg-4">#}
-{#          <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">#}
-{#            <ol class="breadcrumb">#}
-{#              <li class="breadcrumb-item">#}
-{#                <a href="index.html">Home</a>#}
-{#              </li>#}
-{#              <li class="breadcrumb-item active" aria-current="page">#}
-{#                Contact#}
-{#              </li>#}
-{#            </ol>#}
-{#          </nav>#}
-{#        </div>#}
-      </div>
-    </div>
-  </section>
-  <!--/ Intro Single End /-->
 
-  <!--/ Contact Star /-->
-  <section class="contact">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="contact-map box">
-{#            <div id="map" class="contact-map">#}
-{#              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1422937950147!2d-73.98731968482413!3d40.75889497932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes+Square!5e0!3m2!1ses-419!2sve!4v1510329142834"#}
-{#                width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>#}
-{#            </div>#}
-          </div>
-        </div>
-        <div class="col-sm-12 section-t8">
-          <div class="row">
-            <div class="col-md-7">
-              <div style=" border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;">
-   <form method="post" action=""  enctype="multipart/form-data">
-       {% csrf_token %}
-    <label for="fname">Height</label>
-    <input type="text" id="fname" style="width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;" name="height" placeholder="Height.." required>
-{#       <input type="text" name="pr_id" value="{{ request.GET['id']}}}">#}
+<!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>Add Health Details</h1>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
 
-    <label for="lname">Blood Group</label>
-    <input type="text" id="lname" name="blood_group" style="width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;" placeholder="Blood group.." required>
 
-  <label for="lname">Allergies</label>
-    <input type="text" id="lname" name="allergies" style="width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;" placeholder="Allergies.." required>
+    <!-- Contact -->
+    <div id="contact" class="form-1 bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- <h2>Contact details</h2> -->
+                    <p class="p-heading">Inmates constitute a distinct and vulnerable health population that requires special privileges.
+                    High rates of suicide within prison and increased mortality from all causes on release have been documented.
+                    So, it is of utmost importance to record the health details of inmates</p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
 
-  <label for="lname">Diseases</label>
-    <input type="text" id="lname" name="deseases" style="width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;" placeholder="Diseases.." required>
+                    <!-- Contact Form -->
+                    <form id="contactForm" method="post" action=""  enctype="multipart/form-data" name="regForm">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="height" name="height" required >
+                            <label class="label-control" for="height">Height</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="blood_group" name="blood_group"  required>
+                            <label class="label-control" for="blood_group">Blood Group</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" name="allergies" id="allergies" required>
+                            <label class="label-control" for="allergies">Allergies</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="diseases" class="form-control-input"  id ="diseases" required>
+                            <label class="label-control" for="diseases">Diseases</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="weight" class="form-control-input" id="weight" required>
+                            <label class="label-control" for="weight">Weight</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text"  name="bp" class="form-control-input" id="bp" required>
+                            <label class="label-control" for="bp">BP</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text"  name="medication" class="form-control-input" id="medication" required>
+                            <label class="label-control" for="medication">Medication</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text"  name="reading_date" class="form-control-input" id="reading_date" required>
+                            <label class="label-control" for="reading_date">Reading Date</label>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="form-control-submit-button">Submit</button>
+                        </div>
+                    </form>
+                    <!-- end of contact form -->
 
-  <label for="lname">Weight</label>
-    <input type="text" id="lname" name="weight" style="width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;" placeholder="Weight.." required>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of form-1 -->
+    <!-- end of contact -->
 
-  <label for="lname">BP</label>
-    <input type="text" id="lname" name="bp" style="width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;" placeholder="BP.." required>
+ {% endblock %}
 
-  <label for="lname">Medication</label>
-    <input type="text" id="lname" name="medication" style="width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;" placeholder="Medication.." required>
-    <label for="lname">Reading Date</label>
-    <input type="date" id="lname" name="reading_date" style="width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;" placeholder="Reading date.." required>
 
-{#    <label for="country">Warden_Id</label>#}
-{#    <select id="country" name="warden_id" style="width: 100%;#}
-{#  padding: 12px 20px;#}
-{#  margin: 8px 0;#}
-{#  display: inline-block;#}
-{#  border: 1px solid #ccc;#}
-{#  border-radius: 4px;#}
-{#  box-sizing: border-box;">#}
-{#      <option value="australia">Australia</option>#}
-{#      <option value="canada">Canada</option>#}
-{#      <option value="usa">USA</option>#}
-{#    </select>#}
 
-    <input type="submit" style="width: 100%;background-color: #4CAF50;color: white;padding: 14px 20px;margin: 8px 0;border: none;border-radius: 4px;cursor: pointer;" value="Submit">
-  </form>
-</div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-{% endblock %}
-  <!--/ Contact End /-->
-
-  <!--/ footer Star /-->

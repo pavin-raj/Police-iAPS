@@ -1,85 +1,100 @@
+{% extends 'admin/admin_base.html' %}
 
- {% extends 'admin/admin_base.html' %}
-{% load static %}
 {% block content %}
-
-  <!--/ Carousel Star /-->
-  <div class="intro intro-carousel">
-    <div id="carousel" class="owl-carousel owl-theme">
-      <div class="carousel-item-a intro-item bg-image" style="background-image: url({% static 'img/prison3.jpg' %})">
-        <div class="overlay overlay-a"></div>
-        <div class="intro-content display-table">
-          <div class="table-cell">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-8">
-                  <div class="intro-body">
-{#                    <p class="intro-title-top">Doral, Florida#}
-{#                      <br> 78345</p>#}
-                    <h1 class="intro-title mb-4">
-                      <span class="color-b">ADMIN </span>
-                      <br>PRISON MANAGEMENT SYSTEM</h1>
-                    <p class="intro-subtitle intro-price">
-{#                      <a href="#"><span class="price-a">rent | $ 12.000</span></a>#}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item-a intro-item bg-image" style="background-image: url({% static 'img/prison2.webp' %})">
-        <div class="overlay overlay-a"></div>
-        <div class="intro-content display-table">
-          <div class="table-cell">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-8">
-                  <div class="intro-body">
-{#                    <p class="intro-title-top">Doral, Florida#}
-{#                      <br> 78345</p>#}
-                    <h1 class="intro-title mb-4">
-                      <span class="color-b">ADMIN </span>
-                      <br>PRISON MANAGEMENT SYSTEM</h1>
-                    <p class="intro-subtitle intro-price">
-{#                      <a href="#"><span class="price-a">rent | $ 12.000</span></a>#}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item-a intro-item bg-image" style="background-image: url({% static 'img/prison1.webp' %})">
-        <div class="overlay overlay-a"></div>
-        <div class="intro-content display-table">
-          <div class="table-cell">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-8">
-                  <div class="intro-body">
-{#                    <p class="intro-title-top">Doral, Florida#}
-{#                      <br> 78345</p>#}
-                    <h1 class="intro-title mb-4">
-                      <span class="color-b">ADMIN </span>
-                      <br>PRISON MANAGEMENT SYSTEM</h1>
-                    <p class="intro-subtitle intro-price">
-{#                      <a href="#"><span class="price-a">rent | $ 12.000</span></a>#}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="text-container">
+                        <h1 class="h1-large">Admin Dashboard</h1>
+                        <!-- <h1 class="h1-large">I love to create beautiful and efficient websites</h1> -->
+                        <a class="btn-solid-lg page-scroll" href="#about">Discover</a>
+                        <a class="btn-outline-lg page-scroll" href="https://www.github.com/pavin-raj/Police-iAPS"><i class="fas fa-link"></i>More about project</a>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of header -->
+    <!-- end of header -->
 
 
- {% endblock %}
+    <!-- About-->
+    <div id="about" class="basic-1 bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="text-container first">
+                        <h2>Police iAPS</h2>
+                        <p>iAPS is a web based application which can be used in prisons to manage the daily activities of a prison. This project is made on Django and MySQL. Frontend technologies like Bootstrap has also been used.</p>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-4">
+                    <div class="text-container second">
+                        <div class="time">Pros & Cons</div>
+                        <h6>Current System</h6>
+                        <p>In the existing system, all the works are done by manually. The registration of jailers, allocating tasks to prisoners,
+                        giving their salaries, etc are stored in traditional book keeping system.
+
+                        The main limitation of the system is that it is time consuming process.</p>
+                        <!-- <div class="time">2018 - 2019</div>
+                        <h6>Lead Web Developer</h6>
+                        <p>Beautiful project for a major digital agency</p> -->
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-4">
+                    <div class="text-container third">
+                        <div class="time">Pros & Cons</div>
+                        <h6>Proposed System</h6>
+                        <p>The purpose of the project is to describe the functionality and specifications of the design of a web application for
+                        managing jailers, health officers, prisoners and their payroll. Now with the help of this system the admin has the
+                        information on his finger tips and can easily prepare a good record based on their requirements.</p>
+                        <!-- <div class="time">2016 - 2017</div>
+                        <h6>Junior Web Designer</h6>
+                        <p>Junior web designer for small web agency</p> -->
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of about -->
 
 
+    <!-- Services -->
+    <div id="services" class="basic-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="h2-heading">Offered services</h2>
+                    <p class="p-heading">Correctional Homes are necessary for the well-being of a soceity. iAPS systems like this can help jailors and health officers with the following services</p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="text-box">
+                        <i class="far fa fa-credit-card"></i>
+                        <h4>PAYROLL</h4>
+                        <p>We can efficiently manage the payroll of inmates for the works they do inside the prison.</p>
+                    </div> <!-- end of text-box -->
+                </div> <!-- end of col -->
+                <div class="col-lg-4">
+                    <div class="text-box">
+                        <i class="fas fa-solid fa-database"></i>
+                        <h4>PRISONER DATA</h4>
+                        <p>In this era, data is of atmost importance. With iAPS, we safely store prisoner data.</p>
+                    </div> <!-- end of text-box -->
+                </div> <!-- end of col -->
+                <div class="col-lg-4">
+                    <div class="text-box">
+                        <i class="fas 	fa-dove"></i>
+                        <h4>PAROLES</h4>
+                        <p>iAPS can make process of granting paroles quicker at the administrative level.   </p>
+                    </div> <!-- end of text-box -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-2 -->
+    <!-- end of services -->
 
+
+{% endblock %}

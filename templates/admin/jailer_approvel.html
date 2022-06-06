@@ -1,6 +1,4 @@
-
 {% extends 'admin/admin_base.html' %}
-
 {% block content %}
             {% if message %}
 <script>
@@ -19,21 +17,25 @@ alert("{{ message }}")
         </div> <!-- end of container -->
     </header> <!-- end of ex-header -->
     <!-- end of header -->
-   <table class="table table-bordered table-striped table-hover">
+
+
+<table class="table table-bordered table-striped table-hover">
 
 <th class="info" style="background-color: lightgreen;">Name</th>
 <!--<th class="info" style="background-color: lightgreen;">Designation</th>-->
-<!--<th class="info" style="background-color: lightgreen;">Department</th>-->
+<th class="info" style="background-color: lightgreen;">Experience</th>
+<th class="info" style="background-color: lightgreen;">Warden Id</th>
 <th class="info" style="background-color: lightgreen;">Email</th>
 <th class="info" style="background-color: lightgreen;">Image</th>
 <th class="info" style="background-color: lightgreen;">Approve</th>
 <th class="info" style="background-color: lightgreen;">Reject</th>
-{% for dri in medical  %}
+{% for dri in warden  %}
 
 <tr>
     <td>{{ dri.user.first_name}}</td>
 <!--    <td>{{ dri.designation}}</td>-->
-<!--    <td>{{ dri.department}}</td>-->
+    <td>{{ dri.experience}}</td>
+    <td>{{ dri.id}}</td>
 
     <td>{{ dri.user.email}}</td>
     <td><img src="{{ dri.image.url }}" style="width: 115px; height: 115px;"></td>
@@ -47,6 +49,3 @@ alert("{{ message }}")
 </table>
 
 {% endblock %}
-  <!--/ Contact End /-->
-
-  <!--/ footer Star /-->
